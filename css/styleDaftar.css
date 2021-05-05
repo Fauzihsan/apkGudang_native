@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url('../img/background.png');
+    color: white;
+}
+.gambar{
+    margin-top: 6em ;
+    margin-left: 10em;
+    width: 30em;
+    position: absolute;
+}
+
+.errorMessage{
+  text-align: center;
+  color: #e71c31;
+  background-color: rgba(240, 198, 198, 0.7);
+  border-color: #f5c6cb;
+  width: max-content;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  margin-left: -120px;
+  margin-top: 350px;
+  position: absolute;
+  transition: all .5s ease;
+}
+
+.tombol a{
+    text-decoration: none; 
+    font-weight: bold; 
+    color: wheat;
+    margin-left:25%;
+}
+
+.regist{
+    margin: 1.5em;
+    background-color: rgba(0, 0, 0, .9);
+    width: auto;
+    height: auto;
+    padding: 30px 13% ;
+    border-radius: 40px;
+    box-shadow: 1px 1px 3px white;
+}
+
+.div{
+    width: 20em;
+    display: block;
+    position: relative;
+    height: 3em;
+    overflow: hidden;
+    margin-top: 1.5em;
+    margin-left: 60%;
+}
+
+.div input{
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#lbl {
+  color: dodgerblue;
+  margin-top: 10px;
+  position: absolute;
+  font-size: 20px;
+}
+::-webkit-input-placeholder {
+  font-size: 15px;
+}
+
+i.fa {
+  font-size: 25px;
+}
+
+#span1email{
+    position: fixed;
+    top: 310px;
+    display: none;
+    font-weight: bold;
+    color: red;
+}
+
+.div .successemail {
+  color: green;
+}
+
+.div .erroremail {
+  color: red;
+}
+
+.div .erroremail,.div .successemail{
+  position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+
+/* #span1{
+    position: fixed;
+    top: 380px;
+    display: none;
+    font-weight: bold;
+    color: red;
+} */
+
+.div i.fa {
+    font-size: 25px;
+  }
+
+/* .div #success {
+    color: green;
+  }
+  
+.div #error {
+    color: red;
+  } */
+
+.div .notif{
+  position: fixed;
+  top: 385px;
+  display: none;
+  font-weight: bold;
+}
+
+.div .showPass{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+    user-select: none;
+}
+
+.indicator{
+    width: 100px;
+    height: 10px;
+    margin: 10px 0;
+    margin-bottom: 0;
+    margin-left: 42%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+    position: absolute;
+}
+
+.indicator span{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: lightgrey;
+    border-radius: 5px;
+}
+
+
+.indicator span.active:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .indicator span.weak:before{
+    background-color: #ff4757;
+  }
+  .indicator span.medium:before{
+    background-color: orange;
+  }
+  .indicator span.strong:before{
+    background-color: #23ad5c;
+  }
+  .teks{
+    font-size: 15px;
+    font-weight: 500;
+    display: none;
+    margin-bottom: 0px;
+    margin-top: 8px;
+    margin-left: 71%;
+  }
+  form .teks.weak{
+    color: #ff4757;
+  }
+  form .teks.medium{
+    color: orange;
+  }
+  form .teks.strong{
+    color: #23ad5c;
+  }
+  
+.div label{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #1c2a97;
+}
+.div label::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid #5c6ddd;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.text{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.div input:focus + .label .text,
+.div input:valid + .label .text{
+    transform: translateY(-150%);
+    color: rgb(165, 161, 161);
+    font-size: 14px;
+}
+
+.div input:focus + .label::after,
+.div input:valid + .label::after{
+    transform: translateX(0%);
+}
+
+.btn{
+    background-image: linear-gradient(to right, #192888, #4151c0);
+	outline: none;
+	border: none;
+    border-radius: 25px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: .5s;
+    margin: 1em 0;
+    background-size: 200%;
+}
+
+.btn:hover{
+	background-position: right;
+}
+
+.tombol{
+    margin-left: 60%;
+}
+
+@media screen and (max-width: 1050px){
+	.regist{
+		grid-gap: 10rem;
+    }
+}
+
+@media screen and (max-width: 1000px){
+	form{
+		width: 20px;
+	}
+
+	.div label{
+        font-size: 1rem;
+        margin: 8px 0;
+	}
+
+	.gambar{
+		display: none;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+	.regist{
+		grid-template-columns: 1fr;
+	}
+
+	.gambar{
+		display: none;
+    }
+    
+    .tombol input{
+        width: 100px;
+        display: inline;
+        align-items: center;
+        margin-left: 6em;
+    }
+}
